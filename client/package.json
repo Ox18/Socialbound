@@ -15,7 +15,9 @@
   "author": "lnferno",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "awilix": "^10.0.2",
+    "express": "^4.19.2",
     "log4js": "^6.9.1",
     "nodemon": "^3.0.2",
     "pkg": "^5.8.1",

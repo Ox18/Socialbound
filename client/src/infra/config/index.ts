@@ -1,13 +1,19 @@
-import Log4js from "log4js";
 import { DependenciesDTO } from "@/infra/dependencies/dto/dependencies.dto";
 
 export default class Config {
-  logger: Log4js.Logger;
+  dependencies: DependenciesDTO;
+
   constructor(dependencies: DependenciesDTO) {
-    this.logger = dependencies.logger;
+    this.dependencies = dependencies;
   }
 
-  run(port: number) {
-    this.logger.info(`Server is running on port ${port}`);
+  async run(port: number) {
+    const controllers = await this.dependencies.captureControllers.run();
+
+    this.dependencies.logger.info(`Server is 2running on port ${port}`);
+
+    controllers.map((controller) => {
+      controller.execute();
+    });
   }
 }

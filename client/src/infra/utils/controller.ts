@@ -22,4 +22,8 @@ export class Controller {
     this.handle = handle;
     return this;
   }
+
+  execute() {
+    this.dependencies.logger.info('XD')
+  }
 }

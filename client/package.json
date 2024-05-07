@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": "dist/index.js",
   "scripts": {
-    "dev": "nodemon -L --watch ./src ./src/index.ts",
+    "dev": "nodemon -L --quiet --watch ./src ./src/index.ts",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "start": "node dist/index.js",
     "fetch": "git add . && git commit -m \"$MSG\" && git push",

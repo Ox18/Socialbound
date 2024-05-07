@@ -1,4 +1,7 @@
 import "module-alias/register";
 import { configFactory } from "@/infra/dependencies/factories/config.factory";
 
-configFactory().run(23);
+(async () => {
+  console.clear();
+  await configFactory().run(3000);
+})();

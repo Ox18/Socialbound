@@ -1,0 +1,38 @@
+- src/
+  - application/
+    - usecases/              # Aquí van los casos de uso de la aplicación
+      - user/
+        - createUser.js
+        - getUser.js
+        - updateUser.js
+        - deleteUser.js
+    - services/              # Interfaces de servicios externos
+      - emailService.js
+      - paymentService.js
+  - domain/
+    - entities/              # Aquí van las entidades del dominio
+      - User.js
+      - Product.js
+    - repositories/          # Interfaces de repositorios
+      - userRepository.js
+      - productRepository.js
+  - infrastructure/
+    - adapters/              # Adaptadores de la capa de infraestructura
+      - controllers/         # Controladores HTTP
+        - userController.js
+      - databases/           # Implementaciones de bases de datos
+        - mongodb.js
+        - mysql.js
+      - services/            # Implementaciones de servicios externos
+        - emailService.js
+        - paymentService.js
+    - config/                 # Configuración de la aplicación
+      - index.js
+    - middlewares/            # Middlewares de Express, etc.
+      - authentication.js
+      - logging.js
+    - routes/                 # Rutas de la API HTTP
+      - userRoutes.js
+    - utils/                  # Utilidades compartidas
+      - logger.js
+      - validators.js

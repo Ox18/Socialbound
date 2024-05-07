@@ -1,5 +1,5 @@
 import Log4js from "log4js";
-import { DependenciesDTO } from "../dependencies/dto/dependencies.dto";
+import { DependenciesDTO } from "@/infra/dependencies/dto/dependencies.dto";
 
 export default class Config {
   logger: Log4js.Logger;

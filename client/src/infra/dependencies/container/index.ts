@@ -1,6 +1,6 @@
 import * as awilix from "awilix";
-import { logger } from "../../utils/logger";
-import Config from "../../../infra/config";
+import { logger } from "@/infra/utils/logger"
+import Config from "@/infra/config";
 
 export const container = awilix.createContainer({
   injectionMode: awilix.InjectionMode.PROXY,

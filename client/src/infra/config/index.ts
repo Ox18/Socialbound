@@ -1,5 +1,7 @@
 import { DependenciesDTO } from "@/infra/dependencies/dto/dependencies.dto";
 
+import * as cpu from "../utils/cpu";
+
 export default class Config {
   dependencies: DependenciesDTO;
 
@@ -8,12 +10,23 @@ export default class Config {
   }
 
   async run(port: number) {
-    const controllers = await this.dependencies.captureControllers.run();
-
-    this.dependencies.logger.info(`Server is 2running on port ${port}`);
-
-    controllers.map((controller) => {
-      controller.execute();
-    });
+    this.dependencies.logger.info(`Server is running on port ${port}`);
+    this.dependencies.logger.debug("Compiled successfully!");
+    this.dependencies.logger.mark(
+      "You can now call the server on the specified port"
+    );
+    this.dependencies.logger.mark("Local: http://localhost:" + port);
+    this.dependencies.logger.mark(
+      "On Your Network: http://" +
+        this.dependencies.cpu.captureIp() +
+        ":" +
+        port
+    );
+    this.dependencies.logger.mark(
+      "Note that the development build is not optimized."
+    );
+    this.dependencies.logger.mark(
+      "To create a production build, use npm run build."
+    );
   }
 }

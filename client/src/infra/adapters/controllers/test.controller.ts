@@ -2,7 +2,6 @@ import { controllerFactory } from "@/infra/dependencies/factories/controller.fac
 
 const controller = controllerFactory().on(({ req, res, dependencies }) => {
   dependencies.logger.info("Test controller called");
-  res.send(req.body);
 });
 
 export default controller;

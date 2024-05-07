@@ -24,6 +24,7 @@ export class Controller {
   }
 
   execute() {
-    this.dependencies.logger.info('XD')
+    this.dependencies.logger.info("Controller called");
+    this.dependencies.logger.info(this.dependencies.env.variables.config.app.port)
   }
 }

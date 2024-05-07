@@ -1,0 +1,28 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon -L --watch ./src ./src/index.ts",
+    "build": "rimraf dist && tsc -p tsconfig-build.json",
+    "start": "node dist/index.js",
+    "fetch": "git add . && git commit -m \"$MSG\" && git push",
+    "pkg": "pkg -t node18-linux-x64 -o build/my-program ."
+  },
+  "keywords": [],
+  "author": "lnferno",
+  "license": "ISC",
+  "devDependencies": {
+    "awilix": "^10.0.2",
+    "nodemon": "^3.0.2",
+    "pkg": "^5.8.1",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "_moduleAliases": {
+    "@": "src"
+  }
+}

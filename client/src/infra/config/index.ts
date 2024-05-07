@@ -1,7 +1,5 @@
 import { DependenciesDTO } from "@/infra/dependencies/dto/dependencies.dto";
 
-import * as cpu from "../utils/cpu";
-
 export default class Config {
   dependencies: DependenciesDTO;
 
